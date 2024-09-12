@@ -1,0 +1,72 @@
+import { nextui } from "@nextui-org/theme";
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        backgroundLight: "#F2F2F2",
+        logoBlue: "#007AFF",
+        textDark: "#333333",
+        inputBorder: "#D9D9D9",
+        inputBackground: "#FFFFFF",
+        placeholder: "#999999",
+        primary: "rgb(56, 145, 246)",
+        primaryLight: "#3891F6",
+        primaryDark: "#213552",
+        secondary: "#F05454",
+        secondaryLight: "#F28C8C",
+        secondaryDark: "#D92C2C",
+        tertiary: "#FFFFFF",
+        tertiaryBorder: "#30475E",
+        accent: "#F5F5F5",
+        background: "#FFFFFF",
+        text: "#000000",
+        success: "#4CAF50",
+        warning: "#FF9800",
+        lightGray: "#CCCCCC",
+        error: "#F44336",
+        highlight: "#FFD700",
+        neutralGray: "#EAEAEA",
+        darkGray: "#616161",
+        successLight: "#E6F4EA",
+        warningLight: "#FFF3E0",
+        errorLight: "#FEE2E2",
+      },
+    },
+    breakpoints: {
+      xs: "0px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    fonts: {
+      sans: [
+        "Helvetica Neue",
+        "Roboto",
+        "Inter",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "'Segoe UI'",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "'Open Sans'",
+        "'Helvetica Neue'",
+        "sans-serif",
+      ],
+    },
+  },
+  darkMode: "class",
+  plugins: [nextui()],
+};
+export default config;
