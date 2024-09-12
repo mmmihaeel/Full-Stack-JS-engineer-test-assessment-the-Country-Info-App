@@ -4,7 +4,7 @@ const nextConfig = {
     reactStrictMode: false,
     compress: true,
     env: {
-        API_URL: String(process.env.API_URL),
+        NEXT_PUBLIC_API_BASE_URL: String(process.env.NEXT_PUBLIC_API_BASE_URL),
     },
 };
 

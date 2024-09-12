@@ -1,23 +1,16 @@
 import axios from "axios";
-import https from "node:https";
 import { CountriesService } from "./countries-service";
 
-const API_URL = String(process.env.API_URL);
+const NEXT_PUBLIC_API_BASE_URL = String(process.env.NEXT_PUBLIC_API_BASE_URL);
 
 export type ApiReturnType = {
   countries: ReturnType<typeof CountriesService>;
 };
 
-export const Api = (xServerPassword?: string | undefined): ApiReturnType => {
+export const Api = (): ApiReturnType => {
   const instance = axios.create({
-    baseURL: API_URL,
+    baseURL: NEXT_PUBLIC_API_BASE_URL,
     withCredentials: true,
-    httpsAgent: new https.Agent({
-      rejectUnauthorized: false,
-    }),
-    headers: {
-      "x-server-password": xServerPassword,
-    },
   });
   const result = Object.entries({
     countries: CountriesService,

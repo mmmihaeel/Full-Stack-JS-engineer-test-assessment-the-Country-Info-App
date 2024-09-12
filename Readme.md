@@ -1,6 +1,6 @@
 # Full-Stack JS Engineer Test Assessment - Country Info App
 
-This repository contains the Country Info App, which provides detailed information about countries, including their borders, population data, and flags. The application consists of a Backend (Node.js with Nest.js or Express.js) and a Frontend (React with Next.js).
+This repository contains the Country Info App, which provides detailed information about countries, including their borders, population data, and flags. The application consists of a Backend (Nest.js) and a Frontend (Next.js).
 
 ## Project Overview
 
@@ -8,14 +8,14 @@ This repository contains the Country Info App, which provides detailed informati
 
 **Tech Stack:**
 
-- Node.js (Nest.js or Express.js)
+- Node.js (Nest.js framework)
 
 **Endpoints:**
 
 1. **Get Available Countries:**
 
    - Fetches a list of available countries using the Date Nager API.
-   - Endpoint: `GET /api/available-countries`
+   - Endpoint: `GET /countries`
 
 2. **Get Country Info:**
    - Retrieves detailed information about a specific country.
@@ -23,7 +23,7 @@ This repository contains the Country Info App, which provides detailed informati
      - List of border countries
      - Population data suitable for plotting on a chart
      - Flag URL
-   - Endpoint: `GET /api/country-info/:countryCode`
+   - Endpoint: `GET /countries/:countryCode`
 
 ### Frontend
 
@@ -51,3 +51,95 @@ This repository contains the Country Info App, which provides detailed informati
 - Git
 
 ### Setup Instructions
+
+1. **Clone the Repository:**
+
+```sh
+git clone https://github.com/mmmihaeel/Full-Stack-JS-engineer-test-assessment-the-Country-Info-App.git
+cd Full-Stack-JS-engineer-test-assessment-the-Country-Info-App
+```
+
+2. **Backend Setup:**
+
+- Navigate to the backend directory:
+
+```sh
+cd backend
+```
+
+- Install dependencies:
+
+```sh
+npm install
+```
+
+- Check following environment variables in .env file in the backend directory:
+
+```sh
+PORT=3555
+DATE_NAGER_API_BASE_URL=https://date.nager.at/api/v3
+COUNTRIES_NOW_API_BASE_URL=https://countriesnow.space/api/v0.1
+ALLOWED_ORIGIN=http://localhost:3000
+```
+
+- Start the backend server:
+
+```sh
+npm run start:dev
+```
+
+The backend will be running on http://localhost:3555.
+
+3. **Frontend Setup:**
+
+- Navigate to the frontend directory:
+
+```sh
+cd ../frontend
+```
+
+- Install dependencies:
+
+```sh
+npm install
+```
+
+- Check following environment variables in .env file in the frontend directory:
+
+```sh
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3555
+```
+
+- Start the frontend server:
+
+```sh
+npm run dev
+```
+
+The frontend will be running on http://localhost:3000.
+
+## Running the Application
+
+1. Start the Backend:
+
+- In the backend directory, run:
+
+```sh
+npm run start:dev
+```
+
+2. Start the Frontend:
+
+- In the frontend directory, run:
+
+```sh
+npm run dev
+```
+
+3. Access the Application:
+
+Open your web browser and navigate to http://localhost:3000.
+
+## Conclusion
+
+By following these instructions, you can set up, run, and test the Country Info App locally.
